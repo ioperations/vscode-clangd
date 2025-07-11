@@ -169,6 +169,9 @@ export class ClangdContext implements vscode.Disposable {
             return null;
           return next(document, position, token);
         },
+        provideReferences: (document, position , option , token , next) => {  
+          return [];
+        },
         // VSCode applies fuzzy match only on the symbol name, thus it throws
         // away all results if query token is a prefix qualified name.
         // By adding the containerName to the symbol name, it prevents VSCode
